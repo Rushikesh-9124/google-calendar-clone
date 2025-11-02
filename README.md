@@ -66,34 +66,7 @@ Backend	Node.js, Express.js
 Database	MongoDB, Mongoose
 Auth	JWT (JSON Web Token) ready
 Deployment	Vercel (Frontend), Render (Backend)
-🌐 Live Demo
 
-
-
-🏗️ Architecture Overview
-┌──────────────────────────────┐
-│          FRONTEND            │
-│  React + Tailwind + Axios    │
-│  - Calendar Views            |
-|   (Year/Month/Week/Day)      |
-│ - Modals for CRUD Operations |
-│  - AxiosInstance with JWT    │
-└──────────────┬───────────────┘
-               │ REST API Calls
-┌──────────────┴───────────────┐
-│          BACKEND             │
-│   Node.js + Express + Mongo  │
-│  - Event Routes (/api/events)|
-│  - Task Routes (/api/tasks)  |
-│  - Middleware & Validation   │
-└──────────────┬───────────────┘
-               │
-┌──────────────┴───────────────┐
-│           DATABASE           │
-│       MongoDB + Mongoose     │
-│   - Stores Events & Tasks    │
-│   - Linked by User ID        │
-└──────────────────────────────┘
 
 ⚡ Setup and Installation
 1️⃣ Clone Repository
