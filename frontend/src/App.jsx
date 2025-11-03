@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
-import Signup from "./Pages/SignUp";
+import Signup from "./Pages/Signup";
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
