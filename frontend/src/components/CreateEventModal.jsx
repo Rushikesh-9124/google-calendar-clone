@@ -13,7 +13,7 @@ export default function CreateEventModal({ onClose, onCreated }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:4000/api/events/create-event", form);
+    await axios.post("https://google-calendar-clone-3.onrender.com/api/events/create-event", form);
     onCreated();
     onClose();
   };
