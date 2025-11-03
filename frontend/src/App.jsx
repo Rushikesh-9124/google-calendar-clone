@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Landing from "./Pages/Landing";
 import { ToastContainer, toast } from 'react-toastify';
 
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
 import Signup from "./Pages/SignUp";
 
