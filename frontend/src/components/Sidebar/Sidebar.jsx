@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Plus, X } from "lucide-react";
 import axiosInstance from "../../helper/axiosInstance";
 import { VscTriangleDown } from "react-icons/vsc";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 export default function Sidebar({ currentDate, onSelectDate }) {
@@ -48,38 +49,58 @@ export default function Sidebar({ currentDate, onSelectDate }) {
   return (
     <>
       <aside  className="w-45 md:w-65 bg-black/1 px-4 py-5 flex flex-col justify-between relative">
-        <div className="relative" onClick={() =>showCreateMenu && setShowCreateMenu(false)}>
-          <button
-            onClick={() => setShowCreateMenu((prev) => !prev)}
-            className="flex max-w-[135px] h-[60px] items-center justify-center gap-2 bg-white  px-3 py-3 rounded-2xl   shadow-md shadow-gray-400 cursor-pointer  hover:shadow-md transition w-full"
+        
+        <div className="relative">
+      <button
+        onClick={() => setShowCreateMenu((prev) => !prev)}
+        className="flex max-w-[135px] h-[60px] items-center justify-center gap-2 bg-white px-3 py-3 rounded-2xl shadow-md shadow-gray-400 cursor-pointer hover:shadow-md transition w-full"
+      >
+        <Plus size={20} /> Create <VscTriangleDown size={10} />
+      </button>
+
+      
+      <AnimatePresence>
+        {showCreateMenu && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.8 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 12,
+            }}
+            className="absolute top-17 left-0 max-w-[150px] bg-gray-200 shadow-lg rounded-md py-2 z-50"
           >
-            <Plus size={20} /> Create <VscTriangleDown size={10} />
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 500 }}
+              className="w-full text-left px-4 py-2 hover:bg-gray-100"
+              onClick={() => {
+                setCreateType("event");
+                setShowCreateMenu(false);
+              }}
+            >
+              Event
+            </motion.button>
 
-          </button>
-
-          {showCreateMenu && (
-            <div className="absolute top-17 left-0 max-w-[150px] bg-gray-200 shadow-lg rounded-md py-2 z-50">
-              <button
-                className="w-full text-left px-4 py-2 hover:bg-gray-100"
-                onClick={() => {
-                  setCreateType("event");
-                  setShowCreateMenu(false);
-                }}
-              >
-                Event
-              </button>
-              <button
-                className="w-full text-left px-4 py-2 hover:bg-gray-100"
-                onClick={() => {
-                  setCreateType("task");
-                  setShowCreateMenu(false);
-                }}
-              >
-                Task
-              </button>
-            </div>
-          )}
-        </div>
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 500 }}
+              className="w-full text-left px-4 py-2 hover:bg-gray-100"
+              onClick={() => {
+                setCreateType("task");
+                setShowCreateMenu(false);
+              }}
+            >
+              Task
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
 
         <div className="mt-6">
           <div className="flex justify-between items-center mb-2 px-2">
