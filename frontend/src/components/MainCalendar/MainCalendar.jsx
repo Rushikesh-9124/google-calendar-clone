@@ -137,7 +137,7 @@ export default function MainCalendar({ currentDate, currentView }) {
           {hours.map((hour) => (
             <div
               key={hour}
-              className="flex items-center border-t h-12 text-black text-xs relative"
+              className="flex items-center border-t h-12 border-gray-300 text-black text-xs relative"
             >
               <div className="w-16 text-right pr-3">
                 {hour === 0
@@ -148,7 +148,7 @@ export default function MainCalendar({ currentDate, currentView }) {
                   ? "12 PM"
                   : `${hour - 12} PM`}
               </div>
-              <div className="flex-1 border-l h-full relative"></div>
+              <div className="flex-1 border-l border-gray-300 h-full relative"></div>
             </div>
           ))}
 
