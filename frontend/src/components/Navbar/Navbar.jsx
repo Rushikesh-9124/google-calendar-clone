@@ -57,18 +57,18 @@ export default function Navbar({
         <div className="flex items-center gap-2 md:mr-8">
           <div className="relative">
             <img className="h-[42px] w-[42px]" src="../../../public/calendar_1_2x-removebg-preview.png" alt="" />
-            <span className="ml-3 text-blue-600 top-2 left-1 absolute  text-md font-medium">
+            <span className=" text-blue-600 top-2 left-2 md:left-4 absolute  text-md font-medium">
           {currentDate.toLocaleDateString("en-GB", {
             day: "numeric",
           })}
           </span>
           </div>
-          <h1 className="text-xl font-light text-gray-800">Calendar</h1>
+          <h1 className="text-xl hidden md:block font-light text-gray-800">Calendar</h1>
         </div>
 
         <button
           onClick={onToday}
-          className="ml-6 border cursor-pointer rounded-full px-5 active:bg-gray-400/50 transition-all duration-300 py-2 text-sm hover:bg-gray-100"
+          className="ml-3 md:ml-6 border cursor-pointer rounded-full px-2 md:px-5 active:bg-gray-400/50 transition-all duration-300 py-1 md:py-2 text-sm hover:bg-gray-100"
         >
           Today
         </button>
@@ -88,7 +88,7 @@ export default function Navbar({
           </button>
         </div>
 
-        <span className="ml-3 text-gray-700  text-2xl font-light">
+        <span className="ml-3 text-gray-700 hidden md:block  md:text-2xl font-light">
           {currentDate.toLocaleDateString("en-GB", {
             day: "numeric",
             month: "long",
@@ -98,20 +98,20 @@ export default function Navbar({
       </div>
 
       <div className="flex items-center gap-3 relative">
-        <button className="p-2 rounded-full hover:bg-gray-300 transition-all duration-300">
+        <button className="p-2 hidden lg:block rounded-full hover:bg-gray-300 transition-all duration-300">
           <Search size={20} />
         </button>
-        <button className="p-2 rounded-full hover:bg-gray-300 transition-all duration-300">
+        <button className="p-2 hidden lg:block rounded-full hover:bg-gray-300 transition-all duration-300">
           <HelpCircle size={20} />
         </button>
-        <button className="p-2 rounded-full hover:bg-gray-300 transition-all duration-300">
+        <button className="p-2 hidden lg:block rounded-full hover:bg-gray-300 transition-all duration-300">
           <Settings size={20} />
         </button>
 
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setShowViewMenu((prev) => !prev)}
-            className="border rounded-full px-3 py-2 text-sm flex items-center gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-300"
+            className="border rounded-full px-2 md:px-5 py-1 md:py-2 text-sm flex items-center gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-300"
           >
             {currentView || "Day"} <ChevronDown size={14} />
           </button>
@@ -149,13 +149,13 @@ export default function Navbar({
           )}
         </div>
 
-        <button className="p-2 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200  transition-all duration-300">
+        <button className="p-2 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200  transition-all duration-300 hidden lg:block">
           <CalendarDays size={20} />
         </button>
-        <button className="p-2 rounded-full  hover:bg-gray-300 transition-all duration-300">
+        <button className="p-2 rounded-full hidden lg:block hover:bg-gray-300 transition-all duration-300">
           <CheckCircle2 size={20} />
         </button>
-        <button className="p-2 rounded-full hover:bg-gray-300 transition-all duration-300">
+        <button className="p-2 rounded-full hidden lg:block hover:bg-gray-300 transition-all duration-300">
           <Grid size={18} />
         </button>
 
