@@ -49,7 +49,7 @@ export default function Navbar({
   const viewOptions = ["Day", "Week", "Month", "Year", "Schedule", "4 days"];
 
   return (
-    <nav className="w-full flex items-center justify-between bg-black/2  px-4 py-3 relative">
+    <nav className="w-full flex items-center justify-between bg-black/1  px-4 py-3 relative">
       <div className="flex items-center gap-3">
         <button className="p-2 rounded-full cursor-pointer hover:bg-gray-100">
           <Menu size={22} onClick={()=>setDisplaySidebar(prev => !prev)} />
