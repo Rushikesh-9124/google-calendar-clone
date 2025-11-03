@@ -11,9 +11,9 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen flex flex-col bg-linear-to-br from-blue-100 via-white to-purple-100">
-      <header className="w-full flex justify-between items-center px-8 py-4">
-        <h1 className="text-2xl font-bold text-blue-700">Google Calendar Clone</h1>
-        <div className="space-x-4">
+      <header className="w-full flex justify-between items-center px-4 md:px-8 py-4">
+        <h1 className="text-lg md:text-2xl font-bold text-blue-700">Google Calendar Clone</h1>
+        <div className="space-x-4 flex ">
           <button
             onClick={() => navigate("/login")}
             className="text-gray-600 hover:text-blue-600"
