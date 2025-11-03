@@ -72,18 +72,7 @@ export default function Sidebar({ currentDate, onSelectDate }) {
             }}
             className="absolute top-17 left-0 max-w-[150px] bg-gray-200 shadow-lg rounded-md py-2 z-50"
           >
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 500 }}
-              className="w-full text-left px-4 py-2 hover:bg-gray-100"
-              onClick={() => {
-                setCreateType("event");
-                setShowCreateMenu(false);
-              }}
-            >
-              Event
-            </motion.button>
+            
 
             <motion.button
               whileTap={{ scale: 0.95 }}
@@ -96,6 +85,18 @@ export default function Sidebar({ currentDate, onSelectDate }) {
               }}
             >
               Task
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 500 }}
+              className="w-full text-left px-4 py-2 hover:bg-gray-100"
+              onClick={() => {
+                setCreateType("event");
+                setShowCreateMenu(false);
+              }}
+            >
+              Event
             </motion.button>
           </motion.div>
         )}
