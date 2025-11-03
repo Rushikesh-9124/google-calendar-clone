@@ -156,9 +156,9 @@ export default function MainCalendar({ currentDate, currentView }) {
             <div
               key={`event-${i}`}
               onClick={() => setSelectedEventId(e._id)}
-              className="absolute left-24 right-4 bg-blue-100 border-l-4 border-blue-600 text-sm px-2 py-1 rounded shadow cursor-pointer hover:bg-blue-200 transition"
+              className={`absolute left-24 right-4  border-l-4 border-blue-600 text-sm px-2 py-1 rounded shadow cursor-pointer hover:bg-blue-200 transition `}
               style={{
-                top: `${(new Date(e.start).getHours() / 24) * 100}%`,
+                top: `${(new Date(e.start).getHours() / 24) * 100}%`,backgroundColor: e.color,
               }}
             >
               <strong>{e.title}</strong>
@@ -215,9 +215,9 @@ export default function MainCalendar({ currentDate, currentView }) {
           style={{ gridTemplateColumns: `repeat(${daysArray.length}, 1fr)` }}
         >
           {daysArray.map((d, idx) => (
-            <div key={idx} className="py-2 font-semibold text-sm">
-              {d.toLocaleDateString("en-US", { weekday: "short" })}{" "}
-              {d.getDate()}
+            <div key={idx} className="py-5 space-y-1 text-sm">
+              <p className="font-light">{d.toLocaleDateString("en-US", { weekday: "short" })}{" "}</p>
+              <p className="font-blod text-lg md:text-2xl">{d.getDate()}</p>
             </div>
           ))}
         </div>
@@ -251,7 +251,7 @@ export default function MainCalendar({ currentDate, currentView }) {
                     onClick={() => setSelectedEventId(e._id)}
                     className="absolute left-1 right-1 bg-blue-200 text-blue-900 text-xs px-2 py-1 rounded cursor-pointer"
                     style={{
-                      top: `${(new Date(e.start).getHours() / 24) * 100}%`,
+                      top: `${(new Date(e.start).getHours() / 24) * 100}%`, backgroundColor: e.color
                     }}
                   >
                     {e.title}
@@ -318,6 +318,9 @@ export default function MainCalendar({ currentDate, currentView }) {
                   <div
                     key={`event-${idx}`}
                     onClick={() => setSelectedEventId(e._id)}
+                    style={{
+                      backgroundColor: e.color
+                    }}
                     className="truncate bg-blue-100 text-blue-900 rounded px-1 mt-1 cursor-pointer"
                   >
                     {e.title}
