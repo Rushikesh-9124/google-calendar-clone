@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowDown, ChevronLeft, ChevronRight, Plus, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Plus, X } from "lucide-react";
 import axiosInstance from "../../helper/axiosInstance";
 import { VscTriangleDown } from "react-icons/vsc";
 
@@ -47,7 +47,7 @@ export default function Sidebar({ currentDate, onSelectDate }) {
 
   return (
     <>
-      <aside  className="w-65 bg-black/1 px-4 py-5 flex flex-col justify-between relative">
+      <aside  className="w-45 md:w-65 bg-black/1 px-4 py-5 flex flex-col justify-between relative">
         <div className="relative" onClick={() =>showCreateMenu && setShowCreateMenu(false)}>
           <button
             onClick={() => setShowCreateMenu((prev) => !prev)}
