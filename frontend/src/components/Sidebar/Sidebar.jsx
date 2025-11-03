@@ -177,7 +177,7 @@ export default function Sidebar({ currentDate, onSelectDate }) {
         <div className="mt-4">
           <div className="flex justify-between items-center text-gray-700 font-medium mb-2">
             <span>My calendars</span>
-            <span>˅</span>
+            <span><ChevronDown size={18}/></span>
           </div>
           <ul className="space-y-1 text-sm text-gray-700">
             <li className="flex items-center gap-2">
