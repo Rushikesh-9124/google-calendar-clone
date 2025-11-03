@@ -12,6 +12,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import logo from '../../../public/calendar_1_2x-removebg-preview.png'
 
 export default function Navbar({
   setDisplaySidebar,
@@ -56,7 +57,7 @@ export default function Navbar({
 
         <div className="flex items-center gap-2 md:mr-8">
           <div className="relative">
-            <img className="h-[42px] w-[42px]" src="../../../public/calendar_1_2x-removebg-preview.png" alt="" />
+            <img className="h-[42px] w-[42px]" src={logo} alt="" />
             <span className=" text-blue-600 top-2 left-2 md:left-4 absolute  text-md font-medium">
           {currentDate.toLocaleDateString("en-GB", {
             day: "numeric",
