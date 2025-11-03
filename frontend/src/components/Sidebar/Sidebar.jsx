@@ -9,7 +9,7 @@ export default function Sidebar({ currentDate, onSelectDate }) {
   const user = JSON.parse(localStorage.getItem("user"));
   const [currentMonth, setCurrentMonth] = useState(new Date(currentDate));
   const [showCreateMenu, setShowCreateMenu] = useState(false);
-  const [createType, setCreateType] = useState(null); // "event" | "task"
+  const [createType, setCreateType] = useState(null); 
 
   useEffect(() => {
     setCurrentMonth(new Date(currentDate));
